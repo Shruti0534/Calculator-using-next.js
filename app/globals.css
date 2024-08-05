@@ -16,18 +16,40 @@
   }
 }
 
+/* global.css */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; /* Prevents scrolling */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/cal.jpg') center/cover no-repeat;
+  opacity: 0.8; /* Adjust the opacity here */
+  z-index: -1;
+  pointer-events: none; /* Ensures that the background image does not interfere with any other elements */
+}
+
+* {
+  position: relative; /* Ensure all other elements are positioned above the background image */
+  z-index: 1;
+}
+
+
+
+
+.deactivate{
+  color: black;
+}
+
+.shadow{
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 1);
+  background-color: cornsilk ;
 }
